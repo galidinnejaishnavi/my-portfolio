@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jaishnavi Galidinne | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <div class="gradient-bg"></div>
+
+  <header>
+    <div class="logo">JG</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 data-aos="fade-down" data-aos-duration="1000">Jaishnavi Galidinne</h1>
+      
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="200">
+        I am a <span id="typed" class="highlight"></span>
+      </p>
+
+      <p class="description" data-aos="fade-up" data-aos-delay="400">
+        Motivated Computer Science undergraduate with strong foundations in programming, data analysis, and web development. Eager to apply technical skills to solve real-world problems.
+      </p>
+
+      <div class="buttons" data-aos="zoom-in" data-aos-delay="600">
+        <a href="projects.html" class="btn primary">View My Work</a>
+        </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({ 
+      once: true,
+      duration: 800,
+      easing: 'ease-out-quad'
+    });
+
+    // Initialize Typing Effect
+    var typed = new Typed('#typed', {
+      strings: [
+        'Computer Science Student', 
+        'AI & Data Analytics Intern', 
+        'Software Developer'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
+</body>
+</html>
