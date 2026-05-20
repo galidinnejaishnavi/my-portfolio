@@ -4,31 +4,73 @@
   <meta charset="UTF-8">
   <title>Contact | Jaishnavi Galidinne</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <div class="gradient-bg"></div>
+  
   <header>
     <div class="logo">JG</div>
+    <!-- FIXED: Removed the double nested <nav> wrapper -->
     <nav>
       <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="education.html">Education</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-
-  <section class="container">
-    <h1 data-aos="zoom-in">Let's Connect</h1>
-    <div class="glass-card" data-aos="fade-up" style="max-width: 600px; margin: 0 auto;">
-      <div class="skill-list" style="font-size: 1.1rem;">
-        <li><strong>Email:</strong> galidinnejaishnavi@gmail.com </li>
-        <li><strong>Phone:</strong> +91 6309668256 </li>
-        <li><strong>LinkedIn:</strong> linkedin.com/in/jaishnavi-galidinne </li>
-        <li><strong>Location:</strong> Prakasam, Andhra Pradesh </li>
+  
+  <main class="container">
+    <!-- SECTION 1: Direct Info Link Connect -->
+    <section>
+      <h1 data-aos="zoom-in">Let's Connect</h1>
+      <div class="glass-card" data-aos="fade-up" style="max-width: 600px; margin: 1.5rem auto;">
+        <!-- FIXED: Wrapped list items <li> inside an unordered list <ul> tag -->
+        <ul class="skill-list" style="font-size: 1.1rem; list-style: none; padding: 0;">
+          <!-- FIXED: Changed link href to mailto: instead of standard text string -->
+          <li><strong>Email:</strong> <a href="mailto:galidinnejaishnavi@gmail.com">galidinnejaishnavi@gmail.com</a></li>
+          <!-- FIXED: Added a proper tel: link protocol wrapper for mobile devices -->
+          <li><strong>Phone:</strong> <a href="tel:+916309668256">+91 6309668256</a></li>
+          <!-- FIXED: Added https:// prefix so the link routes away from your local directory -->
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jaishnavi-galidinne">linkedin.com/in/jaishnavi-galidinne</a></li>
+          <li><strong>Location:</strong> Prakasam, Andhra Pradesh</li>
+        </ul>
+        <a href="mailto:galidinnejaishnavi@gmail.com" class="btn primary" style="margin-top: 2rem; display: block; text-align: center;">Send an Email</a>
       </div>
-      <a href="mailto:galidinnejaishnavi@gmail.com" class="btn primary" style="margin-top: 2rem; width: 100%; text-align: center;">Send an Email</a>
-    </div>
-  </section>
+    </section>
+
+    <!-- SECTION 2: Dynamic Contact Form -->
+    <section style="margin-top: 3rem;">
+      <h1 data-aos="zoom-in">Contact Me</h1>
+      <div class="glass-card" data-aos="fade-up" style="max-width: 600px; margin: 1.5rem auto;">
+        <!-- RESTRUCTURED: Moved form semantic elements out of .skill-list -->
+        <form action="#" method="POST">
+          <div class="input-box">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+          </div>
+          <div class="input-box">
+            <input type="tel" name="phone" placeholder="Phone Number">
+            <input type="text" name="subject" placeholder="Email Subject" required>
+          </div>
+          <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+          <input type="submit" value="Send Message" class="btn">
+        </form>
+
+        <!-- Dynamic Social Network Profile Array -->
+        <div class="social-media" style="margin-top: 1.5rem; text-align: center;">
+          <a href="https://linkedin.com/in/jaishnavi-galidinne" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://github.com/galidinnejaishnavi" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+          <a href="mailto:galidinnejaishnavi@gmail.com"><i class='bx bxl-gmail'></i></a>
+          <a href="https://wa.me/916309668256" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once: true });</script>
