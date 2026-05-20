@@ -1,11 +1,11 @@
 /* Custom Properties - Centralized for easy color changes */
 :root {
-  --bg-dark: #030712;
-  --accent: #6366f1; /* Electric Indigo */
-  --text-primary: #f9fafb;
-  --text-secondary: #94a3b8;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --bg-dark: #061647;
+  --accent: #0fc3f9; /* Electric Indigo */
+  --text-primary: white;
+  --text-secondary: hsl(197, 95%, 49%);
+  --glass: rgba(74, 145, 156, 0.472);
+  --glass-border: rgba(21, 205, 251, 0.996);
   --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-primary);
   line-height: 1.6;
@@ -88,7 +88,7 @@ nav a:hover {
 
 .subtitle {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
-  color: var(--text-secondary);
+  color: #ffffff; /* This forces "I am a" to be pure white */
   margin-bottom: 2rem;
 }
 
@@ -119,7 +119,7 @@ nav a:hover {
   border: 1px solid var(--glass-border);
   color: var(--text-primary);
   margin-left: 1rem;
-  background: var(--glass);
+  background: var(--accent);
 }
 
 .btn:hover {
@@ -128,20 +128,25 @@ nav a:hover {
 }
 
 /* Glassmorphism Cards */
+/* UPDATED STYLE */
 .container {
-  max-width: 1100px;
+  max-width: 1300px;  /* Increased to let the boxes spread out wider */
   margin: 0 auto;
-  padding: 5rem 5%;
+  padding: 3rem 3%;   /* Decreased side padding from 5% to 2% to reduce the gap */
 }
 
 .glass-card {
   background: var(--glass);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(15px);
-  padding: 2.5rem;
+  padding: 1.5rem;
   border-radius: 24px;
   transition: var(--transition);
   height: 100%;
+}
+
+.glass-card h3{
+  text-align: left;
 }
 
 .glass-card:hover {
@@ -154,13 +159,14 @@ nav a:hover {
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 3rem;
 }
 
 /* Typography & Lists */
 h1, h2, h3 {
   color: var(--text-primary);
+  text-align: center;
 }
 
 .skill-list {
@@ -170,16 +176,29 @@ h1, h2, h3 {
 
 .skill-list li {
   padding: 0.5rem 0;
-  color: var(--text-secondary);
+  color: white;
   display: flex;
   align-items: center;
 }
 
 .skill-list li::before {
   content: '→';
-  color: var(--accent);
+  color: white;
   margin-right: 10px;
   font-weight: bold;
+}
+
+/* Forces links to stay cyan even after you click on them */
+.skill-list li a,
+.skill-list li a:visited {
+  color: #1d19f8 !important;
+  text-decoration: none;
+}
+
+/* Keeps the clean hover effect working perfectly */
+.skill-list li a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
 }
 
 /* Education Timeline */
@@ -205,12 +224,57 @@ input, textarea {
   border-radius: 12px;
   color: white;
   margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
   outline: none;
 }
 
 input:focus, textarea:focus {
   border-color: var(--accent);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  transform: scale(1.1) translateY(-5px);
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+form .btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+form .btn:hover {
+  background: #00ffff;
+  color: #0d1117;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
 
 /* Mobile Responsive Adjustments */
@@ -219,4 +283,22 @@ input:focus, textarea:focus {
   nav a { display: none; } /* Consider adding a mobile menu icon toggle later */
   .hero h1 { font-size: 2.8rem; }
   .secondary { margin-left: 0; margin-top: 1rem; }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .secondary { 
+    margin-left: 0 !important; /* Removes the desktop side margin on mobile */
+    width: 100%;
+    max-width: 250px; /* Keeps the button from stretching too wide on phone screens */
+  }
+  .primary {
+    width: 100%;
+    max-width: 250px;
+  }
+
 }
