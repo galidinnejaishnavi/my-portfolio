@@ -7,22 +7,37 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
 </head>
 <body>
   <div class="gradient-bg"></div>
-  
   <header>
-    <div class="logo">JG</div>
-    <!-- FIXED: Removed the double nested <nav> wrapper -->
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="education.html">Education</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="logo-container">
+    <a href="home.html">
+      <img src="logo.png" alt="Jaishnavi Galidinne Logo" class="circular-logo">
+    </a>
+  </div>
+  <nav>
+    <!-- ADDED: class="nav-link" to all your menu anchors -->
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="education.html" class="nav-link">Education</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    
+    <!-- Theme toggle button remains the same -->
+    <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 15px; padding: 0;">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+</header>
   
   <main class="container">
     <!-- SECTION 1: Direct Info Link Connect -->
@@ -73,6 +88,24 @@
   </main>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+  <script src="script.js" defer></script>
+
+  <!-- Page-Specific Initializations (Only put here what that exact page needs) -->
+  <script>
+    AOS.init({ once: true });
+
+    // ONLY include this on index.html where the typed selector target exists!
+    if (document.getElementById('typed')) {
+      var typed = new Typed('#typed', {
+        strings: ['Computer Science Student', 'AI &amp; Data Analytics Intern', 'Software Developer'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1200,                  
+        loop: true
+      });
+    }
+  </script>
 </body>
 </html>
