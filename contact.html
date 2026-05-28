@@ -24,7 +24,6 @@
     </a>
   </div>
   <nav>
-    <!-- ADDED: class="nav-link" to all your menu anchors -->
     <a href="home.html" class="nav-link">Home</a>
     <a href="about.html" class="nav-link">About</a>
     <a href="skills.html" class="nav-link">Skills</a>
@@ -32,7 +31,6 @@
     <a href="education.html" class="nav-link">Education</a>
     <a href="contact.html" class="nav-link">Contact</a>
     
-    <!-- Theme toggle button remains the same -->
     <button id="theme-toggle" aria-label="Toggle theme" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; margin-left: 15px; padding: 0;">
       <span id="theme-icon">🌙</span>
     </button>
@@ -40,29 +38,22 @@
 </header>
   
   <main class="container">
-    <!-- SECTION 1: Direct Info Link Connect -->
     <section>
       <h1 data-aos="zoom-in">Let's Connect</h1>
       <div class="glass-card" data-aos="fade-up" style="max-width: 600px; margin: 1.5rem auto;">
-        <!-- FIXED: Wrapped list items <li> inside an unordered list <ul> tag -->
         <ul class="skill-list" style="font-size: 1.1rem; list-style: none; padding: 0;">
-          <!-- FIXED: Changed link href to mailto: instead of standard text string -->
-          <li><strong>Email:</strong> <a href="mailto:galidinnejaishnavi@gmail.com">galidinnejaishnavi@gmail.com</a></li>
-          <!-- FIXED: Added a proper tel: link protocol wrapper for mobile devices -->
-          <li><strong>Phone:</strong> <a href="tel:+916309668256">+91 6309668256</a></li>
-          <!-- FIXED: Added https:// prefix so the link routes away from your local directory -->
-          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jaishnavi-galidinne">linkedin.com/in/jaishnavi-galidinne</a></li>
-          <li><strong>Location:</strong> Prakasam, Andhra Pradesh</li>
+          <li><strong>Email: </strong> &nbsp;<a href="mailto:galidinnejaishnavi@gmail.com"> galidinnejaishnavi@gmail.com</a></li>
+          <li><strong>Phone: </strong> &nbsp;<a href="tel:+916309668256"> +91 6309668256</a></li>
+          <li><strong>LinkedIn: </strong> &nbsp;<a href="https://www.linkedin.com/in/jaishnavi-galidinne-57ab21349"> linkedin.com/in/jaishnavi-galidinne</a></li>
+          <li><strong>Location: </strong>&nbsp; Prakasam, Andhra Pradesh</li>
         </ul>
         <a href="mailto:galidinnejaishnavi@gmail.com" class="btn primary" style="margin-top: 2rem; display: block; text-align: center;">Send an Email</a>
       </div>
     </section>
 
-    <!-- SECTION 2: Dynamic Contact Form -->
     <section style="margin-top: 3rem;">
       <h1 data-aos="zoom-in">Contact Me</h1>
       <div class="glass-card" data-aos="fade-up" style="max-width: 600px; margin: 1.5rem auto;">
-        <!-- RESTRUCTURED: Moved form semantic elements out of .skill-list -->
         <form action="#" method="POST">
           <div class="input-box">
             <input type="text" name="name" placeholder="Full Name" required>
@@ -75,28 +66,28 @@
           <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
           <input type="submit" value="Send Message" class="btn">
         </form>
-
-        <!-- Dynamic Social Network Profile Array -->
-        <div class="social-media" style="margin-top: 1.5rem; text-align: center;">
-          <a href="https://linkedin.com/in/jaishnavi-galidinne" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
-          <a href="https://github.com/galidinnejaishnavi" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
-          <a href="mailto:galidinnejaishnavi@gmail.com"><i class='bx bxl-gmail'></i></a>
-          <a href="https://wa.me/916309668256" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
-        </div>
       </div>
     </section>
   </main>
+
+  <footer style="margin-top: 5rem; padding: 2rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+    <div class="social-media" style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 20px;">
+      <a href="https://www.linkedin.com/in/jaishnavi-galidinne-57ab21349" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem; color: var(--text-primary); text-decoration: none;"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/galidinnejaishnavi" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem; color: var(--text-primary); text-decoration: none;"><i class='bx bxl-github'></i></a>
+      <a href="mailto:galidinnejaishnavi@gmail.com" style="font-size: 1.5rem; color: var(--text-primary); text-decoration: none;"><i class='bx bxl-gmail'></i></a>
+      <a href="https://wa.me/916309668256" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem; color: var(--text-primary); text-decoration: none;"><i class='bx bxl-whatsapp'></i></a>
+    </div>
+    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">&copy; 2026 Jaishnavi Galidinne. All rights reserved.</p>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
   <script src="script.js" defer></script>
 
-  <!-- Page-Specific Initializations (Only put here what that exact page needs) -->
   <script>
     AOS.init({ once: true });
 
-    // ONLY include this on index.html where the typed selector target exists!
     if (document.getElementById('typed')) {
       var typed = new Typed('#typed', {
         strings: ['Computer Science Student', 'AI &amp; Data Analytics Intern', 'Software Developer'],
